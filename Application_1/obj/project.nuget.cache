@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7dJCkepVXXPZAtBnkUI9Cx0L8w8Xoq2Fzg4QYFXmWGVAG2E9LDVy9gn7/ga/ReaRMcqlYqnetL/dobdVf4bnEg==",
+  "dgSpecHash": "Hso4qXxQWP5tkcu5qAOl0jX2dtE8NEGN2Mupn6vhsZn9kWVD2rqz/vRTn9r9FSIdlZVaGax/ousX9dUjgABLYA==",
   "success": true,
   "projectFilePath": "/Users/shaanmugapriya/testcacheissue/Application_1/Application_1.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/shaanmugapriya/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
