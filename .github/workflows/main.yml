@@ -17,7 +17,7 @@ jobs:
       with:
         dotnet-version: '8.0.x'
         cache: true
-        cache-dependency-path: '**/packages.lock.json'
+        cache-dependency-path: '**/Application_1/packages.lock.json'
           
     - name: Restore dependencies
       run: dotnet restore --verbosity detailed
