@@ -17,7 +17,10 @@ jobs:
         dotnet-version: '6.0.x'
         cache: true
         cache-dependency-path: '**/Application_1/packages.lock.json'
-          
+
+    - name: Add NuGet source
+      run: dotnet nuget add source https://api.nuget.org/v3/index.json
+      
     - name: Restore dependencies
       run: dotnet restore --verbosity detailed
 
