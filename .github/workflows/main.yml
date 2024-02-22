@@ -2,7 +2,9 @@ name: .NET Build
 
 on:
   workflow_dispatch:
-
+env:
+  ACTIONS_STEP_DEBUG: ${{ secrets.ACTIONS_STEP_DEBUG }}
+  
 jobs:
    build:
     runs-on: windows-latest
