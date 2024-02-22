@@ -2,29 +2,38 @@ name: .NET Build
 
 on:
   workflow_dispatch:
-env:
-  ACTIONS_STEP_DEBUG: ${{ secrets.ACTIONS_STEP_DEBUG }}
-  
+
 jobs:
-   build:
-    runs-on: windows-latest
-    
+  build:
+    runs-on: macOS-latest
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-      
+
     - name: Setup .NET
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '8.0.x'
         cache: true
         cache-dependency-path: '**/Application_1/packages.lock.json'
-      
+
+    - name: Print .NET Info
+      run: dotnet --info
+
     - name: Restore dependencies
       run: dotnet restore --verbosity detailed
 
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore --verbosity detailed
 
     - name: Test
       run: dotnet test --no-build --verbosity normal
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-artifacts
+        path: |
+          **/*.binlog
+          **/*.log
