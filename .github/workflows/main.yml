@@ -16,7 +16,7 @@ jobs:
       with:
         dotnet-version: '8.0.x'
         cache: true
-        cache-dependency-path: '**/Application_1/packages.lock.json'
+        cache-dependency-path: '**/packages.lock.json'
 
     - name: Print .NET Info
       run: dotnet --info
